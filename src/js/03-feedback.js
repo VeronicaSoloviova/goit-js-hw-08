@@ -30,12 +30,12 @@ function initialForm() {
 
 function onFormSubmit(event) {
     event.preventDefault();
-    const formData = {};
     const formInfo = new FormData(event.currentTarget);
     formInfo.forEach((value, key) => {
         formData[key] = value;
     });
     console.log(formData);
+    formData = {}
     localStorage.removeItem(STORAGE_KEY);
     event.currentTarget.reset();
 }
